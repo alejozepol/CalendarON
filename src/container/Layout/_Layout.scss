@@ -1,0 +1,22 @@
+.Layout {
+  display: grid;
+  min-height: 100vh;
+  overflow-x: hidden;
+  grid-template-rows: 4em auto;
+  grid-template-areas:
+    "header"
+    "main";
+  & > header {
+    grid-area: header;
+  }
+  & > main {
+    grid-area: main;
+    padding-bottom: 6%;
+  }
+}
+
+@media (max-width: 768px) {
+  .Layout {
+    grid-template-rows: 6em auto;
+  }
+}

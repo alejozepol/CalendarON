@@ -1,0 +1,74 @@
+//   _____           _
+//  / ____|         | |
+// | |        ___   | |   ___    _ __   ___
+// | |       / _ \  | |  / _ \  | '__| / __|
+// | |____  | (_) | | | | (_) | | |    \__ \
+//  \_____|  \___/  |_|  \___/  |_|    |___/
+
+@mixin sombraOscura {
+  -webkit-box-shadow: $size-sombra fade-out($color-oscuro, $opacity);
+  -moz-box-shadow: $size-sombra fade-out($color-oscuro, $opacity);
+  box-shadow: $size-sombra fade-out($color-oscuro, $opacity);
+}
+@mixin sombraClara {
+  -webkit-box-shadow: $size-sombra fade-out($color-claro, $opacity);
+  -moz-box-shadow: $size-sombra fade-out($color-claro, $opacity);
+  box-shadow: $size-sombra fade-out($color-claro, $opacity);
+}
+@mixin sombraPrimarioClaro {
+  -webkit-box-shadow: $size-sombra fade-out($color-primario-claro, $opacity);
+  -moz-box-shadow: $size-sombra fade-out($color-primario-claro, $opacity);
+  box-shadow: $size-sombra fade-out($color-primario-claro, $opacity);
+}
+@mixin sombraPrimarioOscuro {
+  -webkit-box-shadow: $size-sombra fade-out($color-primario-oscuro, $opacity);
+  -moz-box-shadow: $size-sombra fade-out($color-primario-oscuro, $opacity);
+  box-shadow: $size-sombra fade-out($color-primario-oscuro, $opacity);
+}
+@mixin sombraContrasteClaro {
+  -webkit-box-shadow: $size-sombra fade-out($color-contraste-claro, $opacity);
+  -moz-box-shadow: $size-sombra fade-out($color-contraste-claro, $opacity);
+  box-shadow: $size-sombra fade-out($color-contraste-claro, $opacity);
+}
+@mixin sombraContrasteOscuro {
+  -webkit-box-shadow: $size-sombra fade-out($color-contraste-oscuro, $opacity);
+  -moz-box-shadow: $size-sombra fade-out($color-contraste-oscuro, $opacity);
+  box-shadow: $size-sombra fade-out($color-contraste-oscuro, $opacity);
+}
+
+@mixin degragadoPrimario {
+  background: $color-primario-claro;
+  background: -moz-linear-gradient($color-primario-degradado);
+  background: -webkit-gradient($color-primario-degradado);
+  background: -webkit-linear-gradient($color-primario-degradado);
+  background: -o-linear-gradient($color-primario-degradado);
+  background: -ms-linear-gradient($color-primario-degradado);
+  background: linear-gradient($color-primario-degradado);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-primario-claro', endColorstr='$color-primario-oscuro', GradientType=0 );
+}
+@mixin degragadoContraste {
+  background: $color-contraste-claro;
+  background: -moz-linear-gradient($color-contraste-degradado);
+  background: -webkit-gradient($color-contraste-degradado);
+  background: -webkit-linear-gradient($color-contraste-degradado);
+  background: -o-linear-gradient($color-contraste-degradado);
+  background: -ms-linear-gradient($color-contraste-degradado);
+  background: linear-gradient($color-contraste-degradado);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-contraste-claro', endColorstr='$color-contraste-oscuro', GradientType=0 );
+}
+
+@each $color, $value in (
+  primario-claro: $color-primario-claro,
+  primario-oscuro: $color-primario-oscuro,
+  contraste-claro: $color-contraste-claro,
+  contraste-oscuro: $color-contraste-oscuro,
+  oscuro: $color-oscuro,
+  claro: $color-claro,
+) {
+  .#{$color} {
+    color: $value !important
+  }
+  .bg-#{$color} {
+    background: $value !important
+  }
+};

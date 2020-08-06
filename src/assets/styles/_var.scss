@@ -1,0 +1,55 @@
+$color-primario-claro: #cf1b1b;
+$color-primario-oscuro: #900d0d;
+$color-primario-degradado: to bottom, $color-primario-claro 0%, $color-primario-oscuro 100%;
+$color-contraste-claro: #F2E307;
+$color-contraste-oscuro: #cfc207;
+$color-contraste-degradado: to bottom, $color-contraste-claro 0%, $color-contraste-oscuro 100%;
+$color-oscuro: #423144;
+$color-oscuro-contraste: #393e46;
+$color-claro: #eeeeee;
+$size-sombra: 0px 3px 6px 0px;
+$opacity: 0.5;
+$font-size-desk: 15px;
+
+
+@mixin paddingGlobal {
+  padding: 0% 3.5%;
+}
+
+.styleScroll {
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 30px;
+        width: 2px;
+        height: 2px;
+        background: fade-out($color-primario-claro, 0.8);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        display: block;
+        box-shadow: 0 0 2px 1px fade-out($color-primario-claro, 0.5);
+        background: $color-primario-oscuro;
+    }
+}
+
+@mixin styleScrollX {
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 30px;
+        width: 2px;
+        height: 2px;
+        background: fade-out($color-oscuro, $opacity);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        display: block;
+        box-shadow: 0 0 2px 1px fade-out($color-primario-claro, 0.5);
+        background: $color-primario-oscuro;
+    }
+}

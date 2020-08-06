@@ -1,4 +1,34 @@
-body{
+@import "./var";
+@import "./colors";
+@import "./fonts";
+@import "../../container/Layout/_Layout.scss";
+@import "../../components/Header/_Header.scss";
+@import "../../container/Home/Home";
+
+body {
     margin: 0;
-/*     background-color: brown; */
+    /*     background-color: brown; */
+}
+
+button {
+    border: 2px solid $color-primario-claro;
+    color: $color-primario-claro;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 300ms;
+    cursor: pointer;
+    &:hover {
+        background-color: $color-primario-oscuro;
+        color: $color-claro;
+        border: none;
+        box-shadow: 3px 2px 11px 0 $color-oscuro;
+    }
+    &:active {
+        transform: scale(1.2);
+        transform: scale(0.9);
+    }
+}
+
+a {
+    text-decoration: none;
 }
